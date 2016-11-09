@@ -1,14 +1,16 @@
 <?php
 $code=$_GET['code'];
-
-$json=file_get_contents('https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxappID&secret=wxappsecret='.$code.'&grant_type=authorization_code');
+$appid='';
+$appsecret='';
+$json=file_get_contents('https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$appid'.&secret='.$appsecret.'='.$code.'&grant_type=authorization_code');
 
 $arr=json_decode($json,true);
-$openid=$arr['openid'];
-echo $openid;
-//  $re = sendredpack($openid);
-//  var_dump($re);
-   
+$openid=$arr['openid'];//获取用户OPENID
+
+  $re = sendredpack($openid);//普通红包，直接调用就可用
+//  $re = sendgroupredpack($openid);//裂变红包
+//  var_dump($re);//调试模式
+   //自行替换 $mch_id = '8888888888';$send_name = "商户名称";  $total_amount ='100';//红包金额     
     // 现金红包
     function sendredpack($openid){
        
