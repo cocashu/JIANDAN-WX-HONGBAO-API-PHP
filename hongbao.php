@@ -5,7 +5,8 @@ header("Content-type:text/html;charset=utf-8");
  $b=$_GET['o0o0']; //显示"ok"
 
  $c=$_GET['oo00oo']; //显示"ok"
-$d=strtoupper(md5($a.$b.'55750596'));
+$d=strtoupper(md5($a.$b.'自定义密钥'));
+//与生成二维码的客户端匹配
 //echo $c;
 ?>
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ $d=strtoupper(md5($a.$b.'55750596'));
 <meta charset="utf-8" />
 <title> 鸿宇购物广场-51红包领取页 </title>
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
-<link rel="stylesheet" type="text/css" href="http://cy.hongyujituan.com/css/login.css" />
+<link rel="stylesheet" type="text/css" href="/css/login.css" />
 
   <!--关闭分享按钮-->
 <script>
@@ -54,18 +55,11 @@ setTimeout(function() {
 <div class="place-date">
 
 <?php
-/**
- * 关于微信现金红包的说明
- * 1.微信现金红包要求必传证书，需要到https://pay.weixin.qq.com 账户中心->账户设置->API安全->下载证书
- * 2.默认的使用场景是抽奖（即scene_id参数为PRODUCT_2），额度是1-200元，所以测试时的最低金额是1元。如需修改在产品中心->产品大全->现金红包->产品设置中修改
- * 3.错误码参照 ：https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3
- */
-  
-header('Content-type:text/html; Charset=utf-8');
-$mchid = '1364106302';          //微信支付商户号 PartnerID 通过微信支付商户资料审核后邮件发送
-$appid = 'wx3d4a37d9ed812e88';  //微信支付申请对应的公众号的APPID
-$appKey = '54b9900eafd18f014f225dabeb8203f1';   //微信支付申请对应的公众号的APP Key
-$apiKey = 'YCfH2S8rv2nlisntcZv0LIBaj6gab7AY';   //https://pay.weixin.qq.com 帐户设置-安全设置-API安全-API密钥-设置API密钥
+/header('Content-type:text/html; Charset=utf-8');
+$mchid = '136*******';          //微信支付商户号 PartnerID 通过微信支付商户资料审核后邮件发送
+$appid = 'wx3d4a3******';  //微信支付申请对应的公众号的APPID
+$appKey = '54b99*******************';   //微信支付申请对应的公众号的APP Key
+$apiKey = 'YCfH*************';   //https://pay.weixin.qq.com 帐户设置-安全设置-API安全-API密钥-设置API密钥
 //填写证书所在位置，证书在https://pay.weixin.qq.com 账户中心->账户设置->API安全->下载证书，下载后将apiclient_cert.pem和apiclient_key.pem上传到服务器。
 $apiclient_cert = getcwd().'/cert/apiclient_cert.pem';
 $apiclient_key = getcwd().'/cert/apiclient_key.pem';
@@ -90,7 +84,7 @@ if (!$con)
 mysql_select_db("canyinka", $con);
 mysql_query("set names 'utf8'"); //使用GBK中文编码; 
   
-  //验证签名
+  //验证签名-
   if ($d=$c){
   $con = mysql_connect("127.0.0.1","canyinka","rCW5LWKfBpMD3ZZL");
 if (!$con)
