@@ -11,5 +11,6 @@
 
 设置公众号 个性菜单地址
 
-https://open.weixin.qq.com/connect/oauth2/authorize?appid=自己的APPID&redirect_uri=调用页面的绝对地址&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect
-如：https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx04e34432bda&redirect_uri=http://open.****.cn/index.php&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect
+https://open.weixin.qq.com/
+connect/oauth2/authorize?appid=自己的APPID&redirect_uri=调用页面的绝对地址&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect
+
