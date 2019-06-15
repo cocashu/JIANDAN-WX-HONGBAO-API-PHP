@@ -14,3 +14,8 @@
 https://open.weixin.qq.com/
 connect/oauth2/authorize?appid=自己的APPID&redirect_uri=调用页面的绝对地址&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect
 
+#新增的hongbao.php说明
+1.新增二维码使用限制，每个二维码只能使用一次
+2.为关注的用户需要关注后才能领取
+3.可以增加ip段判断，以禁止某些用户大量扫二维码
+注：证书\css\image文件夹没有上传需要自行建立.
